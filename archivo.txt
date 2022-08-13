@@ -1,0 +1,60 @@
+package Tarea2;
+
+import java.util.Scanner;
+import tarea.Metodos;
+
+/**
+*
+* @author manueldejesusveliznajera
+*/
+public class java {
+
+public static void main(String[] args) {
+Scanner sn = new Scanner(System.in);
+boolean salir = false;
+int opcion; //Guardaremos la opcion del usuario
+
+while(!salir){
+
+System.out.println("1. Ingresar 3 numeros para determinar el Menor");
+System.out.println("2. Determinar caracter de en medio");
+System.out.println("3. Contador de vocales");
+System.out.println("4. Cadena que cumpla con password");
+System.out.println("5. Salir");
+
+
+System.out.println("Escribe una de las opciones");
+opcion = sn.nextInt();
+Metodos metodo = new Metodos();
+switch(opcion){
+case 1:
+	Scanner sc = new Scanner(System.in);
+	int n1, n2, n3;
+	System.out.print("Introduzca primer número: ");
+	n1 = sc.nextInt();
+	System.out.print("Introduzca segundo número: ");
+	n2 = sc.nextInt();
+	System.out.print("Introduzca tercer número: ");
+	n3 = sc.nextInt();
+	
+	
+	metodo.numeroMenor(n1, n2, n3);
+	break;
+case 2:
+	metodo.ordenarAsc();
+	break;
+case 3:
+	metodo.ordenarDesc();
+	break;
+case 4:
+	metodo.imprimirArreglo();
+	break;
+case 5:
+	salir = true;
+	break;
+default:
+	System.out.println("Solo números entre 1 y 4");
+	}
+	}
+    }
+}

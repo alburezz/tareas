@@ -1,0 +1,53 @@
+package tarea;
+
+/**
+*
+* @author manueldejesusveliznajera
+*/
+
+import java.util.Scanner;
+public class Tarea {
+
+/**
+* @param args the command line arguments
+*/
+public static void main(String[] args) {
+Scanner sn = new Scanner(System.in);
+boolean salir = false;
+int opcion; //Guardaremos la opcion del usuario
+
+while(!salir){
+
+System.out.println("1. Llenar arreglo aleatoriamente");
+System.out.println("2. Ordenar arreglo ascendente");
+System.out.println("3. Ordenar descendente");
+System.out.println("4. Mostrar arreglo");
+System.out.println("5. Salir");
+
+
+System.out.println("Escribe una de las opciones");
+opcion = sn.nextInt();
+Metodos metodo = new Metodos();
+switch(opcion){
+case 1:
+	metodo.llenarArreglo();
+	break;
+case 2:
+	metodo.ordenarAsc();
+	break;
+case 3:
+	metodo.ordenarDesc();
+	break;
+case 4:
+	metodo.imprimirArreglo();
+	break;
+case 5:
+	salir = true;
+	break;
+default:
+	System.out.println("Solo números entre 1 y 4");
+	}
+	}
+    }
+    
+}

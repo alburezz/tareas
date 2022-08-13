@@ -1,0 +1,22 @@
+public void numeroMedio(String data){
+
+String texto = data;
+
+int total = texto.length();
+if(total% 2 == 0){
+int mitad = total/2;
+
+char primerMitad =texto.charAt(mitad);
+char segundaMitad =texto.charAt(mitad-1);
+
+System.out.println("La cadena " + texto +" Sus mitades son  " +segundaMitad  +" y " +primerMitad);
+}
+
+int mitad2 = total/2;
+char mit = texto.charAt(mitad2);
+System.out.println("La cadena " + texto +" Su caracter de en medio es " +mit  );
+
+
+
+
+}

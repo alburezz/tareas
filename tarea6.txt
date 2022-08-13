@@ -1,0 +1,165 @@
+
+* Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+* Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+	*/
+	package tarea;
+	
+	/**
+	*
+	* @author manueldejesusveliznajera
+	*/
+	
+	import java.util.Random;
+	import java.util.Arrays;
+	import java.util.Collections;
+	
+	public class Metodos {
+	static int numeros[] = new int[5];
+	
+	//metodo 1
+    public void llenarArreglo(){
+	int min = 1;
+	int max = 5;
+	
+	Random random = new Random();
+    
+	for (int x=0;x<numeros.length;x++){
+	int value = random.nextInt(max + min) + min;
+	
+	numeros[x]=value;
+	
+	}
+	System.out.println("Se realizo el Llenado aleatoriamente con Exito!!");
+    }
+    
+    
+    //metodo 2
+    
+    public void ordenarAsc(){
+	Arrays.sort(numeros);
+	System.out.println("Se ordeno el arreglo ascendentemente!!");
+	
+    }
+    
+    //metodo 3
+    public void ordenarDesc(){
+	
+	for (int i = 0 ; i < numeros.length - 1 ; i++) {
+	int max = i;
+	
+	//buscamos el mayor número
+	for (int j = i + 1 ; j < numeros.length ; j++) {
+	if (numeros[j] > numeros[max]) {
+	max = j;    //encontramos el mayor número
+	}
+	}
+	
+	if (i <> max) {
+	//permutamos los valores
+	int aux = numeros[i];
+	numeros[i] = numeros[max];
+	numeros[max] = aux;
+	}
+	}
+    }
+    //metodo 4
+    public void imprimirArreglo(){
+	
+	for(int i=0;i<numeros.length;i++)
+	{
+	System.out.println(numeros[i]);
+	}
+    }
+    
+    //metodo menor numero de 3 ingresados
+    
+    public void numeroMenor(int a, int b, int c){
+	
+	int n1= a, n2= b, n3=c;
+	
+	if (n1 < n2) {
+	if (n1 < n3) {
+	System.out.println("El menor es: " + n1);                                             
+	} else {
+	System.out.println("el menor es: " + n3);     
+	}
+	} else if (n2 < n3) {
+	System.out.println("el menor es: " + n2);
+	} else {
+	System.out.println("el menor es: " + n3);
+	}
+    }
+    
+    //metodo para encontrar caracter de enmedio
+    
+    public void numeroMedio(String data){
+	
+	String texto = data;
+	
+	int total = texto.length();
+	if(total% 2 == 0){
+	int mitad = total/2;
+	
+	char primerMitad =texto.charAt(mitad);
+	char segundaMitad =texto.charAt(mitad-1);
+	
+	System.out.println("La cadena " + texto +" Sus mitades son  " +segundaMitad  +" y " +primerMitad);
+	}
+	
+	int mitad2 = total/2;
+	char mit = texto.charAt(mitad2);
+	System.out.println("La cadena " + texto +" Su caracter de en medio es " +mit  );
+	
+	
+	
+	
+    }
+    
+    public void contarVocales(String vocales){
+	int contador = 0;
+	String sPalabra =vocales;
+	for(int x=0;x<sPalabra.length();x++) {
+	if ((sPalabra.charAt(x)=='a') | (sPalabra.charAt(x)=='e') | (sPalabra.charAt(x)=='i') | (sPalabra.charAt(x)=='o') | (sPalabra.charAt(x)=='u')){ 
+	contador++;
+	}
+	}
+	
+	System.out.println("La palabra " + sPalabra + " contiene " + contador + " vocales");
+    
+    }
+    
+    public void password(String pass){
+	
+	String cadena= pass;
+	String[] a = cadena.split(",");
+	int cantidad = cadena.length();
+	Boolean mini = true;
+	
+	if( cantidad<8){
+	System.out.println("el password debe contener minimos 8 caracteres");
+	mini =false;
+	}
+	int contador=0;
+	int digito=0;
+	
+	
+	for(int x=0;x<cadena.length();x++) {
+	if ((cadena.charAt(x)=='a') | (cadena.charAt(x)=='e') | (cadena.charAt(x)=='i') | (cadena.charAt(x)=='o') | (cadena.charAt(x)=='u')){ 
+	contador++;
+	}
+	if(cadena.charAt(x)==0 | cadena.charAt(x)==1 | cadena.charAt(x)==2 | cadena.charAt(x)==3 | cadena.charAt(x)==4 | cadena.charAt(x)==5 | cadena.charAt(x)==6 | cadena.charAt(x)==7 | cadena.charAt(x)==8 | cadena.charAt(x)==9){
+	digito++;
+	
+	}
+	}
+	
+	if(mini & contador>0 & digito >1){
+	System.out.println("el password cumplio con los requisitos!");
+	}else{
+	System.out.println("el password no cumplio con los requisitos, verifiquelo");
+	
+	}
+	
+	
+    }
+}
